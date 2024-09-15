@@ -97,6 +97,8 @@ def calcular_probs():
 st.set_page_config(page_title="Vencex - Poisson", page_icon="v negra - favicon.png", layout="wide")
 st.title(":rainbow[_Calculadora de Probabilidades_]")
 st.subheader("Estimación mediante la distribución de :red[Poisson]")
+st.write("_-Introduce los datos._")
+st.write("_-Haz click en_ :orange[_CALCULAR PROBABILIDADES_]")
 st.subheader("", divider="orange")
 
 
@@ -118,17 +120,14 @@ with st.sidebar:
     visitante_contra = col2.slider("Media de goles como visitante, EN CONTRA", 0.0, 7.0)
     visitantes_f = col2.number_input("Media de goles marcados por los equipos VISITANTES en la competición", min_value=0.0)
 
-    if locales_f != 0 and visitantes_f != 0:
-        pass
-    else:
-        st.stop()
+
+if locales_f != 0 and visitantes_f != 0:
+    pass
+else:
+    st.stop()
 
 
 if st.sidebar.button("CALCULAR PROBABILIDADES"):
     calcular_probs()
-
 else:
-    st.title("")
-    st.title("")
-    st.title("")
-    st.subheader(":orange[_Introduce los datos y haz click en_] _CALCULAR PROBABILIDADES_")
+    pass
